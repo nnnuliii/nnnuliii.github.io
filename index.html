@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="stylesheet" href="./南京南京_files/main.css">
-  <!-- TODO 1  -->
-  <script src="./南京南京_files/d3.v4.min.js.下载"></script>
-  <script src="./南京南京_files/jquery-1.11.3.min.js.下载"></script>
-  <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}
-  </style>
+    <meta charset="UTF-8">
+    <title>挑战与未来展望</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../static/plugins/element-ui/index.css" />
+    <!-- TODO 1  -->
+    <script src="./南京南京_files/d3.v4.min.js.下载"></script>
+    <script src="./南京南京_files/jquery-1.11.3.min.js.下载"></script>
+    <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:30px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}
+    </style>
+    <style type=“text/css”> .left { float: left; width: 50%; padding: 0; margin: 0; } </style>
+    <style>
+      body{margin: 45px;}
+    </style>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>老龄化社会中的医疗服务--主页</title>
-  <!-- 引入样式 -->
-  <link rel="stylesheet" href="../static/plugins/element-ui/index.css" />
-  <script src="../static/plugins/vue/vue.js"></script>
-  <!-- 引入组件库 -->
-  <script src="../static/plugins/element-ui/index.js"></script>
-  <!-- 引入axios -->
-  <script src="../static/plugins/axios/axios.min.js"></script>
+    <script src="../static/plugins/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../static/plugins/element-ui/index.js"></script>
+    <!-- 引入axios -->
+    <script src="../static/plugins/axios/axios.min.js"></script>
 
-  <style>
+    <style>
+      .thick-underline {
+        border-bottom: 3px solid black; /* 设置宽度为3像素 */
+     }
+
       .quote {
-        background-color: #9D5546;
-        border-radius: 5px;
-        padding-top: 1px;
-        padding-bottom: 1px;
-        padding-left: 20px;
-        padding-right: 20px;
-        font-family: 'fengyasong';
-        margin-bottom: 50px;
+          background-color: #9D5546;
+          border-radius: 5px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+          padding-left: 20px;
+          padding-right: 20px;
+          font-family: 'fengyasong';
+          margin-bottom: 40px;
+          margin-top: 5px;
+          
       }
+
       footer {
       color: rgb(0, 0, 0) !important;
-      margin-top: 60px;
+      margin-top: 40px;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -61,15 +68,15 @@
       transform: skew(-10deg);
       text-shadow: 4px 4px 4px #888;
       margin: 0;
-      font-size: 150px;
+      font-size: 100px;
       margin-top: 60px;
       text-align: center;
       }
 
       .el-input {
-      width: 900px;
+      /* width: 900px; */
       margin-top: 50px;
-      margin-left: 390px;
+      /* margin-left: 350px; */
       border: 1.5px solid black;
       border-radius: 5px;
 
@@ -78,7 +85,7 @@
       }
 
       .input-with-select {
-      background-color: #ffffff;
+      background-color: #fff;
       }
 
       .back-pic{
@@ -122,7 +129,7 @@
       }
 
       #title {
-        font-size: 20vw;
+        font-size: 15vw;
       }
 
       .el-input {
@@ -136,9 +143,23 @@
         margin-left: 10vw;
       }
 
-    }
-    .el-menu-item.is-active {
-      color: rgb(40, 10, 10) !important;
+      .el-menu--horizontal .el-menu .el-menu-item, .el-menu--horizontal .el-menu .el-submenu__title {
+            background-color: #FFF;
+            float: none;
+            height: 100px;
+            line-height: 36px;
+            padding: 0 10px;
+            color: #909399;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+        .inline-submenu {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+
     }
   </style>
 </head>
@@ -148,61 +169,131 @@
   <div class="login" id="URLrecognize">
     <div>
 <!----------------------------- 导航栏修改------------------------>
-<div style="position: relative; height: 60px;color: #000000;">
+<div style="position: relative; height: 60px;">
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="background-color: #e0d8cf; position: fixed; top: 0; width: 100%;">
-    <el-menu-item index="1" @click="TO_1" style="border-bottom: 2px solid #9D5546;color: #9D5546;">主页</el-menu-item>
 
-    <el-menu-item index="2" @click="TO_2">社会老龄化</el-menu-item>
+    <el-menu-item index="1" @click="TO_1" style="border-bottom:transparent;color:#9D5546;">
+      主页
+  </el-menu-item>
 
-    <el-menu-item index="3" @click="TO_3">
-        医疗保险
-    </el-menu-item>
+  <el-menu-item index="2" @click="TO_2" >社会老龄化</el-menu-item>
 
-    <el-menu-item index="4" @click="TO_4">
-        医疗保险与幸福感的历时性探究
-    </el-menu-item>
-    <el-menu-item index="5" @click="TO_5" >
-      挑战与未来展望
-    </el-menu-item>
+  <el-menu-item index="3" @click="TO_3">
+    医疗保险
+  </el-menu-item>
+
+  <el-menu-item index="4" @click="TO_4">
+    医疗保险与幸福感的历时性探究
+  </el-menu-item>
+  <el-menu-item index="5" @click="TO_5"  style="border-bottom:2px solid #9D5546;color: #000000;">
+    挑战与未来展望
+  </el-menu-item>
   </el-menu>
 </div>
+
 <!----------------------------- 导航栏修改------------------------>
+<h3 class="chapter quote" style="color: white;font-size: 32px;">（四）挑战与未来展望</h3>
+<div class="main_text_full ">
+       <h4 style="color:  rgb(100, 100, 100);text-align: justify;font-size: 16px;line-height: 150%;"><u>&ensp; &ensp;厘清政府、市场、公民三者各自的养老责任是应对老龄化挑战时无法绕开的课题。通过对CGSS中的数据进行简单的探索，可以发现参保老年人的家庭幸福感高于未参保老年人的幸福感。其中家庭幸福感来源于CGSS中的两个题项：“和家人在一起，我感到特别愉快”；“我有时感到很难与家人（包括父母、爱人、孩子）”，第二各题项经过了反向处理。
+       </u>  
+      </h4>
+</div>
 
-    </div>
+<div class="flourish-embed flourish-chart" data-src="visualisation/15504394" style="width: 60%;height: 60%;margin: auto;">
+  <script src="https://public.flourish.studio/resources/embed.js">
+  </script>
+</div>
 
-    <div style="padding-top: 50px;color: #000000; padding-bottom: 50px;" class="quote">
-      <div class="title">老龄化社会中的医疗服务</div>
-      <div class="subtitle">——基于《CGSS数据》老龄化医疗服务数据分析</div>
-      <div class="subsubtitle">@作者：有你正好赢队</div>
-    </div>
-    <div class="section" style="margin-top: 50px;color: #000000;">
-      <img src="./南京南京_files/overview.png" style="width: 40%; margin-left:4%; margin-right:4%; float: left ">
-      <div class="main_text ">
-          <h1>POINT1：老龄化问题</h1>
-          <h1>POINT2：医疗保险覆盖情况，老人参保情况</h1>
-          <h1>POINT3：子女的陪伴与关心——注重老人身体状况，通过医保、照护等方式提升老年人幸福感</h1>
-
-      </div>
-    </div>
-
-
-    <footer>
-      <p>&copy; 2023 Ynzhy-squad. All Rights Reserved.</p>
-    </footer>
+<div class="section" >
+    <div class="main_text_full" style="color:  rgb(100, 100, 100);font-size: 18px;line-height: 150%;">
+        <p style="color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;"> &ensp; &ensp; 子女关爱父母，在一定程度上会更加重视他们的身体健康，更愿意帮助他们购买基本的医疗保险，这不仅能提升老年人的幸福感，也能破解老年人落入诈骗陷阱的难题。该不该给老年人买保险一直是网上热议的话题，其实归根结底，不是不能给父母买保险，而是不要让父母自己买保险，毕竟年龄比较大了，很容易上当受骗。</p> 
+        <!-- <div class="flourish-embed flourish-chart" data-src="visualisation/15479970">
+          <script src="https://public.flourish.studio/resources/embed.js">
+          </script>
+        </div> -->
+        <p style="color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;"> &ensp; &ensp;数据显示，2017年1月至2022年1月，北京一中院审理诈骗案532件，涉诈骗老年人案件40件，占7.5%，诈骗老年人案件数量呈上升趋势。而近五年来，该院审理的“骗老案”涉及领域包括养生保健、投资理财、文物收藏等，其中涉及养生保健领域的案件占42.5%。其中大多数案件是向老年人高价售卖三无保健品，或以帮忙办理保健品退费的名义行骗，还有的虚构老年人有疾病的事实，推销昂贵的养生服务项目，骗取老年人钱款，数额较大。而案发时钱款早已被犯罪分子挥霍或隐匿，追赃挽损困难，给老人及其家庭造成了严重的经济损失。可见，老年人群体对健康的急迫需求和该群体的易骗性之间存在着剧烈的冲突。</p>
+        <p style="color:  rgb(100, 100, 100);font-size: 18px;text-align: justify;">&ensp; &ensp;2021年，国家医保局待遇保障司推出了一个新的机制，对个人账户使用范围进行拓展，参加职工医保的子女们的个人账户可以给自己的父母使用，实行家庭范围内的共济，这在一定程度上加强了父母与子女的联系，削弱老年人群体易骗性造成的影响。</p>
+        <p style="color:  rgb(100, 100, 100);font-size: 18px;text-align: justify;">&ensp; &ensp;家住合肥的余华英老人，今年已经102岁了，她热爱锻炼，作息也很规律：7点起床，上午进行一次户外活动，中午定时午休，下午也有一次户外活动。子女们评价她为“闲不住的人儿”，而这位闲不住的老人酷爱旅行，家里的墙上挂满了旅拍，足迹遍布祖国大地。</p>
+        <img src="../static/img/image9.png" style="width: 55%;margin-left: 22%; height: 55%;margin-top: 1%;margin-bottom: -10%;">
+    </div>      
+</div>
+<div class="main_text " style="clear: both;color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;line-height: 150%;">
+  <p><br/>&ensp; &ensp;余华英的旅行日记让人不得不佩服老人家的身体状态。当然，这也与子女们的精心照顾密不可分。2010年，老人曾遭遇了一场车祸，孝顺的子女们轮流护理，一年后，老人的身体便恢复如初。老人说自己很幸福，未来她还想多出去走走，看看祖国的大好河山。
+  <p>&ensp; &ensp;除了基本的医疗保险外，老年人的照护需求也亟待满足。上述余华英老人所在的街道、社区的工作人员也时常上门探望，定期为余华英做体检。根据CGSS2021中有关互联网医疗及家庭照顾需求问题的数据，对于“过去 12 个月，您通过各种形式上网为自己或他人搜索关于健康或医疗方面信息的频繁程度如何？”这个问题，大多数老人给出的是“我从不上网”的答案。</p>
+  <div class="flourish-embed flourish-chart" data-src="visualisation/15514681" style="width: 61%;height: 61%;margin: auto;margin-bottom: 2%;">
+    <script src="https://public.flourish.studio/resources/embed.js">
+    </script>
   </div>
+  <div class="flourish-embed flourish-chart" data-src="visualisation/15514718" style="width: 70%;height: 70%;margin: auto;">
+    <script src="https://public.flourish.studio/resources/embed.js">
+    </script>
+  </div>
+</p>
+</div>
+
+<div class="main_text " style="clear: both;text-align: justify;color:  rgb(100, 100, 100);font-size: 18px;line-height: 150%;">
+  <p><br/>&ensp; &ensp;而对于“12 个月，互联网上的信息对我的健康行为产生了积极的影响/过去 12 个月，互联网上的信息帮助我理解医生告诉我的事情/互联网可以有助于人们判断自己是否需要去看医生/互联网有助于确认医生是否给了人们适当的建议”这些问题，他们却大多肯定了互联网医疗的实用性，一定程度上反映了行为与认知之间的错位。老年人群体作为互联网时代下的的“数字弃民”，他们表达出了对健康、医疗照护的“狂热”追求，却无法良好地掌握新兴的互联网便捷工具来满足自身需求。
+    <div class="flourish-embed flourish-chart" data-src="visualisation/15514801" style="width: 70%;height: 70%;margin: auto;">
+      <script src="https://public.flourish.studio/resources/embed.js">
+      </script>
+    </div>
+    <p>&ensp; &ensp;那么，老年人生活照料服务究竟该由谁买单？近年来提出的“医养结合”便是这个问题的答案。一方面，政府精准用好用活公共财政资源和保险资金。考虑不同老年人的保障需求，提供有针对性的生活补贴。特别对空巢、高龄等困难老人群体，设立特殊津贴制度，兜住底线，确保安全。同时强化城乡居民医疗保险保障力度。针对经济、生活困难的农村空巢老人，要提高重大疾病、大医院和外地医院的医药费用报销比例。《2022年民政事业发展统计公报》显示，截至 2022 年底，全国共有 4143.0 万老年人享受老年人补贴，其中享受高龄补贴的老年人 3406.4 万人，享受护理补贴的老年人 94.4 万人，享受养老服务补贴的老年人 574.9 万人，享受综合补贴的老年人 67.4 万人。全国共支出老年福利资金 423.0 亿元，养老服务资金 170.1 亿元。</p>
+    <p style="color:  rgb(100, 100, 100);font-size: 18px;">&ensp; &ensp;近年来，合肥市持续提升老年人福利，拓展居家养老服务内容也让广大老年人更有幸福感。在高龄津贴方面，自2021年1月1日起，合肥市建立高龄津贴动态调整机制，并连续两年提高高龄津贴标准。现行标准为：80-89周岁高龄津贴每人每月120元；90-99周岁高龄津贴每人每月240元；100周岁以上高龄津贴每人每月600元。2023年以来，全市发放年度高龄津贴总计2.78亿元，超过24万名老年人享受高龄津贴。</p>
+    <p style="color:  rgb(100, 100, 100);font-size: 18px;">&ensp; &ensp;另一方面，政府需要统筹居家、社区和机构的信息与资源，化零为整，做到信息共享、资源共享、服务定制。推动医疗卫生服务延伸至社区和家庭，促进基层医疗卫生机构与社区居家养老相结合，提供连续的健康管理服务和居家医疗服务。据中国消费者协会的《2022年养老消费调查项目研究报告》显示，居家养老是大多数老人的首选养老方式，他们对于康复护理等医疗服务的需求达到了22.6%，需求较高。
+    </p>
+    <p style="color:  rgb(100, 100, 100);font-size: 18px;">&ensp; &ensp;此外，对于畅通医疗保障服务信息交互渠道的问题，不少机构都交出了满意的答卷。如山东省利津县医疗保障局设立了老年人办理业务绿色通道，开通了“老年人优先办理窗口”，设置了“爱心专座区”，制作了通俗易懂的宣传折页和明白纸，配备了医药箱、老花镜、放大镜等方便老年人及特殊群体办事的设施设备，让老年人在办理医保业务的过程中也能享有更多获得感、幸服感、安全感。</p>
+    <p style="color:  rgb(100, 100, 100);font-size: 18px;">&ensp; &ensp;政府兜底的同时，也为养老产业留出空间。专家指出，发展健康持续的医养结合产业，需要提振市场有效需求，其核心是老人和家属以及社会提供的支付能力。但是这种长期照护的成本，让单个家庭长期来承受是很大的负担。因此，未来需要在完善作为第一支柱的基本养老保险制度基础上，积极发展第二支柱的企业补充养老保险和职业年金及发展第三支柱的商业性养老保险计划，如商业长期护理保险等多种老年护理保险产品，满足老年人护理保障需求。</p>
+  </p>
+
+</div>
+
+
+
+
+
+        <div class="main_text_full" style="margin-top: 50px; color:#a3a3a3; line-height: 1.2;">
+            <div class="guidance">参考文献：</div>
+            <p>人口老龄化背景下老年人基本养老保险参保行为的影响因素——基于2015年CGSS数据的实证分析</p>
+            <p>基本医疗保险对国民幸福感的影响研究 - 中国知网 (cnki.net)</p>
+            <p>国务院关于印发“十四五”国家老龄事业发展和养老服务体系规划的通知_其他_中国政府网 (www.gov.cn)</p>
+            <p>2021年度国家老龄事业发展公报_服务信息_中国政府网 (www.gov.cn)</p>
+            <p>中国人口老龄化：未来挑战与应对策略 (qq.com)</p>
+            <p>老年公平在中国中文版-确认印刷版.pdf (unfpa.org)</p>
+            <p>人口专家：中国正式步入老龄社会 社会发展将产生六大变化_澎湃号·媒体_澎湃新闻-The Paper</p>
+            <p>我国预计2035年左右进入重度老龄化阶段 60岁及以上老年人口将突破4亿--健康·生活--人民网 (people.com.cn)</p>
+            <p>年轻人要攒够多少钱，老了才敢生病？ (qq.com)</p>
+        </div>
+
+
+        <footer style="clear: both;">
+          <p style="margin-top: 10%;color: #000000;">© 2023 Ynzhy-squad. All Rights Reserved.</p>
+        </footer>
+        
+
+
+
+
+
+        <script type="text/javascript " src="timeline_data.js "></script>
+        <script type="text/javascript" src="./南京南京_files/glyph_data.js.下载"></script>
+        <script type="text/javascript" src="./南京南京_files/arc_data.js.下载"></script>
+        <script type="text/javascript" src="./南京南京_files/bubble.js.下载"></script><div class="tooltip" style="opacity: 0;"></div>
+        <!-- <script type="text/javascript " src='js/glyph.js'></script> -->
+        <script type="text/javascript" src="./南京南京_files/map.js.下载"></script><div class="tooltip" style="opacity: 0;"></div><div class="tooltip" style="opacity: 0;"></div>
+        <script type="text/javascript" src="./南京南京_files/animated_map.js.下载"></script><div class="tooltip" style="opacity: 0;"></div>
+        <script type="text/javascript" src="./南京南京_files/arc.js.下载"></script>
+        <script type="text/javascript" src="./南京南京_files/network.js.下载"></script><div class="tooltip_network" style="opacity: 0; left: 665px; top: 4942px;">发生2次</div>
+        <!-- <script src='js/spirial.js'></script> -->
+        <!-- <script src='js/curve.js'></script> -->
 
   <!-- 引入鼠标动画 -->
-  <script src="../static/js/action.js"></script>
+  <!--<script src="../static/js/action.js"></script>-->
 
   <script>
     new Vue({
       el: '#URLrecognize',
       data() {
         return {
-            formInline: {
-              user: '',
-              region: '1'
-            },
           input1: '',
           result: '',
           activeIndex: '1',
@@ -210,6 +301,69 @@
 
         }
       },
+      mounted(){
+            // 获取span节点
+            var name_box = document.getElementById('namebox');
+            var avatarImg = document.getElementById('avatar');
+            var type1 =document.getElementById("Type");
+            var text =document.getElementById("TEXT");
+            var engine =document.getElementById("Engine");
+            engine_temp = localStorage.getItem("engine")
+            if(engine_temp === "1"){
+                engine.value = "SVM-Transformer Engine"
+            }else if(engine_temp === "2"){
+                engine.value = "SVM-Decision tree Engine"
+            }else if(engine_temp === "3"){
+                engine.value = "SVM-Random Forest Engine"
+            }else if(engine_temp === "4"){
+                engine.value = "SVM-CNN Engine"
+            }
+
+            if(localStorage.getItem("type") === "0"){
+                name_box.textContent =  localStorage.getItem("url") + " 鉴定结果： 安全网址！"
+                avatarImg.src = '../static/img/aq.png';
+                type1.value = "安全网址！"
+                text.value = localStorage.getItem("未使用爬虫爬取");
+                return;
+            }
+
+              var type = localStorage.getItem("type");
+                    if(type === "1"){
+                        type = "购物消费"
+                    }else if(type === "2"){
+                        type = "婚恋交友"
+                    }else if(type === "3"){
+                        type = "假冒身份"
+                    }else if(type === "4"){
+                        type = "钓鱼网站"
+                    }else if(type === "5"){
+                        type = "冒充公检法"
+                    }else if(type === "6"){
+                        type = "平台诈骗"
+                    }else if(type === "7"){
+                        type = "招聘兼职"
+                    }else if(type === "8"){
+                        type = "杀猪盘"
+                    }else if(type === "9"){
+                        type = "赌博博彩"
+                    }else if(type === "10"){
+                        type = "信贷理财"
+                    }else if(type === "11"){
+                        type = "刷单诈骗"
+                    }else if(type === "12"){
+                        type = "中奖诈骗"
+                    }
+
+                type1.value = type;
+
+            name_box.textContent = localStorage.getItem("url") + " 鉴定结果： 危险网址！"
+            avatarImg.src = '../static/img/bd.png';
+            type.value = localStorage.getItem("type");
+            if(localStorage.getItem("html") === ""){
+            text.value = localStorage.getItem("爬虫未爬取到有效文本");
+            }
+            text.value = localStorage.getItem("html");
+        },
       methods: {
             TO_1(){
                 window.location.href = "login.html"
@@ -229,39 +383,22 @@
         handleSelect(key, keyPath) {
           console.log(key, keyPath);
         },
-
-        validateInput(input) {
-          const reg = /^(?!https?:\/\/)[^\u4e00-\u9fa5]{5,}\..*$/;
-          return reg.test(input);
-        },
-
         onNext() {
-
-
           if (this.validateInput(this.input1)) {
 
             this.$message.success("格式通过检验，正在发送请求！");
-            localStorage.setItem("url",this.input1)
+            var output = document.getElementById('output');
+            output.value = 'URL TYPE : ';
+
             //如果用户登录了，就把其手机号发过去
             if(localStorage.getItem("phone") != null){
               axios.get("/url/" + this.input1,{
                 params:{
-                  phone:localStorage.getItem("phone"),
-                  choice:this.formInline.region
+                  phone:localStorage.getItem("phone")
                 }
               }).then((res)=>{
-
-                localStorage.setItem("engine",this.formInline.region)
-                //获取type 并存储
-                if(res.data.indexOf(";") > 0 ){
-                    localStorage.setItem("type",res.data.substring(0, res.data.indexOf(";")))
-                    localStorage.setItem("html",res.data.substring(res.data.indexOf("网页爬取到的文本: ")+9))
-                }else{
-                    localStorage.setItem("type",res.data)
-                    localStorage.setItem("html","")
-                }
-                this.TO_5()
-
+                var output = document.getElementById('output');
+                output.value = 'URL TYPE : ' + res.data;
               })
 
               return;
@@ -269,22 +406,9 @@
 
             else{
               //如果用户未登录，则不发手机号
-              axios.get("/url/" + this.input1,{
-                params:{
-                  choice:this.formInline.region
-                }
-              }).then((res) => {
-                    localStorage.setItem("engine",this.formInline.region)
-<!--                var output = document.getElementById('output');-->
-<!--                output.value = 'URL TYPE : ' + res.data;-->
-                if(res.data.indexOf(";") > 0 ){
-                    localStorage.setItem("type",res.data.substring(0, res.data.indexOf(";")))
-                    localStorage.setItem("html",res.data.substring(res.data.indexOf("网页爬取到的文本: ")+9))
-                }else{
-                    localStorage.setItem("type",res.data)
-                    localStorage.setItem("html","")
-                }
-                this.TO_5()
+              axios.get("/url/" + this.input1).then((res) => {
+                var output = document.getElementById('output');
+                output.value = 'URL TYPE : ' + res.data;
               }).finally(() => {
 
               })
