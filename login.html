@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./南京南京_files/main.css">
+  <!-- TODO 1  -->
+  <script src="./南京南京_files/d3.v4.min.js.下载"></script>
+  <script src="./南京南京_files/jquery-1.11.3.min.js.下载"></script>
+  <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}
+  </style>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>老龄化社会中的医疗服务--主页</title>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="../static/plugins/element-ui/index.css" />
+  <script src="../static/plugins/vue/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="../static/plugins/element-ui/index.js"></script>
+  <!-- 引入axios -->
+  <script src="../static/plugins/axios/axios.min.js"></script>
+
+  <style>
+      .quote {
+        background-color: #9D5546;
+        border-radius: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-family: 'fengyasong';
+        margin-bottom: 50px;
+      }
+      footer {
+      color: rgb(0, 0, 0) !important;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100px; /* 设置 footer 的高度 /
+      background-color: #f5f5f5; / 设置 footer 的背景颜色 */
+      opacity: 0.7;
+      }
+      h1 {
+      margin-top: 60px;
+      text-align: center;
+      text-shadow: 2px 2px 2px #888;
+      }
+
+      h2 {
+      text-align: center;
+      text-shadow: 1px 1px 1px #888;
+      }
+
+      #text{
+      margin-top: 50px;
+      }
+
+      #title {
+      transform: skew(-10deg);
+      text-shadow: 4px 4px 4px #888;
+      margin: 0;
+      font-size: 150px;
+      margin-top: 60px;
+      text-align: center;
+      }
+
+      .el-input {
+      width: 900px;
+      margin-top: 50px;
+      margin-left: 390px;
+      border: 1.5px solid black;
+      border-radius: 5px;
+
+      box-shadow: 2px 2px 2px #888, -2px -2px 2px #555;
+      transform: skew(-10deg);
+      }
+
+      .input-with-select {
+      background-color: #ffffff;
+      }
+
+      .back-pic{
+      /* background: url(../static/img/2.jpg); */
+      background-color: #e0d8cf;
+      position: fixed;
+      height: 120%;
+
+          background-size: 100%;
+          background-repeat: repeat-y;
+          top: 0%;
+          left: 0%;
+          right: 0;
+          /* opacity: 0.4; */
+          z-index: -2;
+      }
+      textarea{
+      width: 900px;
+      height: 200pX;
+      margin-top: 30px;
+      margin-left: 350px;
+      border: 1.5px solid black;
+      border-radius: 5px;
+      font-size: 30px;
+      box-shadow: 2px 2px 2px #888, -2px -2px 2px #555;
+      transform: skew(-3deg);
+      }
+
+    /* 响应式布局 */
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 7vw;
+      }
+
+      h2 {
+        font-size: 5vw;
+      }
+
+      #text {
+        font-size: 4vw;
+      }
+
+      #title {
+        font-size: 20vw;
+      }
+
+      .el-input {
+        width: 80vw;
+        margin-left: 10vw;
+      }
+
+      textarea {
+        width: 80vw;
+        font-size: 5vw;
+        margin-left: 10vw;
+      }
+
+    }
+    .el-menu-item.is-active {
+      color: rgb(40, 10, 10) !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="back-pic"></div>
+  <div class="login" id="URLrecognize">
+    <div>
+<!----------------------------- 导航栏修改------------------------>
+<div style="position: relative; height: 60px;color: #000000;">
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="background-color: #e0d8cf; position: fixed; top: 0; width: 100%;">
+    <el-menu-item index="1" @click="TO_1" style="border-bottom: 2px solid #9D5546;color: #9D5546;">主页</el-menu-item>
+
+    <el-menu-item index="2" @click="TO_2">社会老龄化</el-menu-item>
+
+    <el-menu-item index="3" @click="TO_3">
+        医疗保险
+    </el-menu-item>
+
+    <el-menu-item index="4" @click="TO_4">
+        医疗保险与幸福感的历时性探究
+    </el-menu-item>
+    <el-menu-item index="5" @click="TO_5" >
+      挑战与未来展望
+    </el-menu-item>
+  </el-menu>
+</div>
+<!----------------------------- 导航栏修改------------------------>
+
+    </div>
+
+    <div style="padding-top: 50px;color: #000000; padding-bottom: 50px;" class="quote">
+      <div class="title">老龄化社会中的医疗服务</div>
+      <div class="subtitle">——基于《CGSS数据》老龄化医疗服务数据分析</div>
+      <div class="subsubtitle">@作者：有你正好赢队</div>
+    </div>
+    <div class="section" style="margin-top: 50px;color: #000000;">
+      <img src="./南京南京_files/overview.png" style="width: 40%; margin-left:4%; margin-right:4%; float: left ">
+      <div class="main_text ">
+          <h1>POINT1：老龄化问题</h1>
+          <h1>POINT2：医疗保险覆盖情况，老人参保情况</h1>
+          <h1>POINT3：子女的陪伴与关心——注重老人身体状况，通过医保、照护等方式提升老年人幸福感</h1>
+
+      </div>
+    </div>
+
+
+    <footer>
+      <p>&copy; 2023 Ynzhy-squad. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <!-- 引入鼠标动画 -->
+  <script src="../static/js/action.js"></script>
+
+  <script>
+    new Vue({
+      el: '#URLrecognize',
+      data() {
+        return {
+            formInline: {
+              user: '',
+              region: '1'
+            },
+          input1: '',
+          result: '',
+          activeIndex: '1',
+          activeIndex2: '1'
+
+        }
+      },
+      methods: {
+            TO_1(){
+                window.location.href = "login.html"
+            },
+            TO_2(){
+                window.location.href = "history.html"
+            },
+            TO_3(){
+                window.location.href = "hotUrl.html"
+            },
+            TO_4(){
+                window.location.href = "API.html"
+            },
+            TO_5(){
+                window.location.href = "result.html"
+            },
+        handleSelect(key, keyPath) {
+          console.log(key, keyPath);
+        },
+
+        validateInput(input) {
+          const reg = /^(?!https?:\/\/)[^\u4e00-\u9fa5]{5,}\..*$/;
+          return reg.test(input);
+        },
+
+        onNext() {
+
+
+          if (this.validateInput(this.input1)) {
+
+            this.$message.success("格式通过检验，正在发送请求！");
+            localStorage.setItem("url",this.input1)
+            //如果用户登录了，就把其手机号发过去
+            if(localStorage.getItem("phone") != null){
+              axios.get("/url/" + this.input1,{
+                params:{
+                  phone:localStorage.getItem("phone"),
+                  choice:this.formInline.region
+                }
+              }).then((res)=>{
+
+                localStorage.setItem("engine",this.formInline.region)
+                //获取type 并存储
+                if(res.data.indexOf(";") > 0 ){
+                    localStorage.setItem("type",res.data.substring(0, res.data.indexOf(";")))
+                    localStorage.setItem("html",res.data.substring(res.data.indexOf("网页爬取到的文本: ")+9))
+                }else{
+                    localStorage.setItem("type",res.data)
+                    localStorage.setItem("html","")
+                }
+                this.TO_5()
+
+              })
+
+              return;
+            }
+
+            else{
+              //如果用户未登录，则不发手机号
+              axios.get("/url/" + this.input1,{
+                params:{
+                  choice:this.formInline.region
+                }
+              }).then((res) => {
+                    localStorage.setItem("engine",this.formInline.region)
+<!--                var output = document.getElementById('output');-->
+<!--                output.value = 'URL TYPE : ' + res.data;-->
+                if(res.data.indexOf(";") > 0 ){
+                    localStorage.setItem("type",res.data.substring(0, res.data.indexOf(";")))
+                    localStorage.setItem("html",res.data.substring(res.data.indexOf("网页爬取到的文本: ")+9))
+                }else{
+                    localStorage.setItem("type",res.data)
+                    localStorage.setItem("html","")
+                }
+                this.TO_5()
+              }).finally(() => {
+
+              })
+              // this.$message.success("请求已发送，请耐心等待结果！");
+            }
+
+          } else {
+            this.$message.error("格式不规范，请重新输入！");
+            this.onClear();
+          }
+
+
+          console.log(this.input1);
+        },
+
+        onClear() {
+          this.input1 = ""
+        }
+      },
+
+    })
+  </script>
+</body>
+
+</html>

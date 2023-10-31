@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医疗保险与幸福感的历时性探究</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../static/plugins/element-ui/index.css" />
+    <!-- TODO 1  -->
+    <script src="./南京南京_files/d3.v4.min.js.下载"></script>
+    <script src="./南京南京_files/jquery-1.11.3.min.js.下载"></script>
+    <style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:30px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.enable_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.enable_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.enable_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.enable_copy_btns_btn:hover{opacity:.8}.enable_copy_btns_btn:active{opacity:1}
+    </style>
+    <style type=“text/css”> .left { float: left; width: 50%; padding: 0; margin: 0; } </style>
+    <style>
+      body{margin: 45px;}
+    </style>
+
+    <script src="../static/plugins/vue/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../static/plugins/element-ui/index.js"></script>
+    <!-- 引入axios -->
+    <script src="../static/plugins/axios/axios.min.js"></script>
+
+    <style>
+      .thick-underline {
+        border-bottom: 3px solid black; /* 设置宽度为3像素 */
+     }
+
+      .quote {
+          background-color: #9D5546;
+          border-radius: 5px;
+          padding-top: 1px;
+          padding-bottom: 1px;
+          padding-left: 20px;
+          padding-right: 20px;
+          font-family: 'fengyasong';
+          margin-bottom: 40px;
+          margin-top: 5px;
+          
+      }
+
+      footer {
+      color: rgb(0, 0, 0) !important;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100px; /* 设置 footer 的高度 /
+      background-color: #f5f5f5; / 设置 footer 的背景颜色 */
+      opacity: 0.7;
+      }
+      h1 {
+      margin-top: 60px;
+      text-align: center;
+      text-shadow: 2px 2px 2px #888;
+      }
+
+      h2 {
+      text-align: center;
+      text-shadow: 1px 1px 1px #888;
+      }
+
+      #text{
+      margin-top: 50px;
+      }
+
+      #title {
+      transform: skew(-10deg);
+      text-shadow: 4px 4px 4px #888;
+      margin: 0;
+      font-size: 100px;
+      margin-top: 60px;
+      text-align: center;
+      }
+
+      .el-input {
+      /* width: 900px; */
+      margin-top: 50px;
+      /* margin-left: 350px; */
+      border: 1.5px solid black;
+      border-radius: 5px;
+
+      box-shadow: 2px 2px 2px #888, -2px -2px 2px #555;
+      transform: skew(-10deg);
+      }
+
+      .input-with-select {
+      background-color: #fff;
+      }
+
+      .back-pic{
+      /* background: url(../static/img/2.jpg); */
+      background-color: #e0d8cf;
+      position: fixed;
+      height: 120%;
+
+          background-size: 100%;
+          background-repeat: repeat-y;
+          top: 0%;
+          left: 0%;
+          right: 0;
+          /* opacity: 0.4; */
+          z-index: -2;
+      }
+      textarea{
+      width: 900px;
+      height: 200pX;
+      margin-top: 30px;
+      margin-left: 350px;
+      border: 1.5px solid black;
+      border-radius: 5px;
+      font-size: 30px;
+      box-shadow: 2px 2px 2px #888, -2px -2px 2px #555;
+      transform: skew(-3deg);
+      }
+
+    /* 响应式布局 */
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 7vw;
+      }
+
+      h2 {
+        font-size: 5vw;
+      }
+
+      #text {
+        font-size: 4vw;
+      }
+
+      #title {
+        font-size: 15vw;
+      }
+
+      .el-input {
+        width: 80vw;
+        margin-left: 10vw;
+      }
+
+      textarea {
+        width: 80vw;
+        font-size: 5vw;
+        margin-left: 10vw;
+      }
+
+      .el-menu--horizontal .el-menu .el-menu-item, .el-menu--horizontal .el-menu .el-submenu__title {
+            background-color: #FFF;
+            float: none;
+            height: 100px;
+            line-height: 36px;
+            padding: 0 10px;
+            color: #909399;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+        .inline-submenu {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+
+    }
+  </style>
+</head>
+<body>
+    <div class="back-pic"></div>
+    <div class="login" id="URLrecognize">
+    <!----------------------------- 导航栏修改------------------------>
+    <div style="position: relative; height: 60px;">
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="background-color: #e0d8cf; position: fixed; top: 0; width: 100%;">
+
+        <el-menu-item index="1" @click="TO_1" style="border-bottom:transparent;color:#9D5546;">
+          主页
+      </el-menu-item>
+
+      <el-menu-item index="2" @click="TO_2" >社会老龄化</el-menu-item>
+
+      <el-menu-item index="3" @click="TO_3">
+        医疗保险
+      </el-menu-item>
+
+      <el-menu-item index="4" @click="TO_4" style="border-bottom:2px solid #9D5546;color: #000000;">
+        医疗保险与幸福感的历时性探究
+      </el-menu-item>
+      <el-menu-item index="5" @click="TO_5" >
+        挑战与未来展望
+      </el-menu-item>
+      </el-menu>
+    </div>
+
+<!----------------------------- 导航栏修改------------------------>
+
+
+    <h3 class="chapter quote" style="color: white;font-size: 32px;">（三）医疗保险与幸福感的历时性探究 </h3>
+    <div class="main_text_full ">
+           <h4 style="color:  rgb(100, 100, 100);text-align: justify;font-size: 16px;line-height: 150%;text-align: justify;"><u>当下社会面临着协调人口老龄化与经济社会正常运作的关系的挑战，老年人的子女有着现实经济负担与养老孝心双重压力，为老年人配置医疗保险能够在需要时支撑医疗费用带来的重担，一定程度上提升老年人生活幸福感。为此，我们对医疗保险与幸福感进行了历时性探究。通过研究发现老年人的幸福感总体呈现上升趋势。通过有序Logistic分析发现，老年人的参保情况与幸福感之间显著相关，参保能够给老年人带来更高的幸福感。同时，老年人的幸福感还会受到性别、健康状况、经济状况的影响。
+           </u>  
+          </h4>
+    </div>
+    
+    <div class="section">
+        <div class="main_text " style="color:  rgb(100, 100, 100);text-align: justify;font-size: 16px;font-style:italic;line-height: 150%;">
+            <p>TIPS：实践“积极老龄观、健康老龄化”，提高老年群体生活福祉是国家人口发展战略的重要内容。老年人生活的经济供养是老龄社会的基本问题，老年人口主要通过劳动自养（劳动收入和储蓄）、社会保障（各类养老保险金）、家庭供养（家庭其他成员供养）和政府供养（政府补助和救济）来安排自身老年阶段的经济生活。
+            </p>
+        </div>
+        <img src="../static/img/image5.png" style="width: 58%;margin-left: 22%; height: 58%;">
+    </div>
+    
+    <div class="section" >
+        <div class="main_text_full" style="color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;line-height: 150%;">
+            <p style="color:  rgb(100, 100, 100);font-size: 18px;text-align: justify;">当前，社会保障和家庭供养仍然是老年人口解决生活保障的主要方式。随着年龄的增长，老年人不可避免地会面临健康问题，这时候医疗保险就可以发挥作用，为老年人预防重大疾病及寻医问诊保驾护航。</p> 
+            <div class="flourish-embed flourish-chart" data-src="visualisation/15479970" style="width: 65%;height: 65%;margin: auto;">
+              <script src="https://public.flourish.studio/resources/embed.js">
+              </script>
+            </div>
+            <p  style="color:  rgb(100, 100, 100);font-size: 18px;text-align: justify;">在CGSS中通过“总的来说，您觉得您的生活是否幸福？”此题项测量人们的生活幸福感。答案为“非常不幸福、比较不幸福、说不上幸福、比较幸福、非常幸福”，分别赋值为1-5，幸福程度越高，分数越高。通过分析数据，发现2011-2021年十年间，老年人生活幸福感总体呈上升趋势，在2021年突破4分门槛。从各个题项的占比来看，对生活满意的人占比逐渐扩大，20021年，有超80%的老年人都对生活情况感到满意，这其中更有32.96%的老年人给出了“非常满意”的高评价。</p>
+          </div>
+
+          <div class="flourish-embed flourish-chart" data-src="visualisation/15502585" style="width: 65%;height: 65%;margin: auto;">
+            <script src="https://public.flourish.studio/resources/embed.js">
+            </script>
+          </div>
+            
+    </div>
+    <div class="main_text " style="clear: both;color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;line-height: 150%;">
+      <p><br/>为了避免遭遇孝心和现实的两难境地，子女给父母配置相应的医疗险，预防疾病风险，既能在父母生病时有充足的保障来解决医疗费用问题，又不至于因为经济负担过重拖垮整个家庭，从经济层面提升老人生活的幸福感。
+      <br/>
+      <br/>在以往的研究中有指出参加医疗保险能够提高居民的幸福感，但大多聚焦于其他群体如：中年人、女性，或选取单一时点如：基于2017年CGSS数据探究医疗保险对老年人幸福感的影响，或关注单一方面如：农村基本医疗保险对老年人切入来探究医疗保险与幸福感两者间的关系。为进一步探究在老龄化社会下，参加基本医疗保险是否能够提高老年人的幸福感，本研究选取了2011年到2021年的数据进行分析，历时更久，数据覆盖面更广，并聚焦于老年群体。
+      <br/>
+      <br/>对CGSS中是否参加基本医疗保险与幸福感之间的关系进行简单的探索，发现2012年到2021年未参保的老年人幸福感均低于参保老年人的幸福感，且两个群体之间的幸福感差距有扩大趋势。
+    </p>
+    </div>
+    <div class="flourish-embed flourish-chart" data-src="visualisation/15501209" style="width: 90%;height: 90%;margin: auto;">
+      <script src="https://public.flourish.studio/resources/embed.js">
+      </script>
+    </div>
+    <img src="../static/img/image6.png" style="width: 65%;margin-left: 15%; height: 800px;">
+
+    <div class="main_text " style="clear: both;color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;line-height: 150%;">
+      <p><br/>由于被解释变量幸福感为CGSS中的样本被赋予了不同的权重，因此在分析中也将权重纳入了考量。利用SPSS27.0对样本进行个案加权后，进行分析。样本分布情况为男性5700人、女性5710人，非农户5670人、农户5739人，参加基本医疗保险10552人、没有参加基本医疗保险858人。样本的平均幸福感达到了3.92，平均健康状况为3.04，平均心理健康水平为3.75，平均受教育程度为3.49，样本之间的教育程度有较大的差异，标准差为2.621。
+        <img src="../static/img/image7.png" style="width: 65%;margin-left: 15%; height: 800px;margin-top: 5%;">
+        <br/>由于被解释变量幸福感是依据1至5五个等级进行划分的，为有序离散变量，因此采用了有序Logiatic回归方法进行分析，通过逐步回归，使得变量之间的作用更加明确。首先，在研究中先引入了解释变量参保情况，即样本是否参与了基本医疗保险，对此变量与幸福感之间的关系进行分析，构成模型一；而后引入控制变量性别、经济状况、健康状况自评、心理健康、年龄、户口性质、最高教育程度进行分析，构成模型二。模型拟合效果良好，因此进行下一步分析。
+      </p>
+      <p>
+        在模型一的分析中得出，参加基本医疗保险与个人幸福感之间显著相关（p小于0.001），其中，参保的老年人为参照组。参保情况的β值为-0.343，OR值为0.710，由此可知，未参保的老年人相比于参保的老年人满意度低，满意度至少提升一个等级的可能性，未参保的老年人是参保老年人的0.710倍。
+      </p>
+    </div>
+
+    <img src="../static/img/image8.png" style="width: 65%;margin-left: 15%; height: 600px;margin-top: 2%;">
+
+    <p>
+      在模型一的分析中得出，参加基本医疗保险与个人幸福感之间显著相关（p小于0.001），其中，参保的老年人为参照组。参保情况的β值为-0.343，OR值为0.710，由此可知，未参保的老年人相比于参保的老年人满意度低，满意度至少提升一个等级的可能性，未参保的老年人是参保老年人的0.710倍。
+    </p>
+
+    <div class="main_text " style="clear: both;color:  rgb(100, 100, 100);text-align: justify;font-size: 18px;line-height: 150%;">
+      <p><br/>医疗保险能够为老年人的生活提供基础的保障。“医养结合！又有一项纳入医保，老人有福了！”“老年人的福音！2024年城乡居民医保缴费调整，60-70岁只需交半，70岁以上直接免费！”改革的春风带来一条又一条好消息，很多老年人表示，政府的决策使他们感到非常温暖，对于自己的晚年生活也充满了期待。医保费用减轻，这意味着他们有更多的资金可以用于其他生活开销。将额外的资金用于休闲、旅游和教育等领域，积极地参与到社会生活中，对于维持老年人的积极心态，提高老年人的生活幸福感发挥着重要作用。
+        <br/><br/>健康、参与和保障是实践积极老龄化的三个支柱，我们通过加强对人口健康的投资，完善老年健康服务体系，完善社会保障和养老服务体系的建设，有助于建设对老年友好的社会，提高老年群体的健康、活力和生活福祉，提升幸福感。基于积极老龄化的思路来积极应对老龄化挑战，人口老龄化就不会成为人类社会和国家发展的危机，老龄化过程中的人类社会应该会变得更加美好。
+        <br/><br/>但老年人是否参保？是否选对了险种？是否正确缴纳保费？都与他们能否顺利享受保障，安享幸福晚年息息相关。现阶段还存在一些农民对养老保险知识不了解，出现多种险种一起投保，但相关机构之间协调不足未及时发现此类情况，让参保人员重复缴纳保费。同时，学历与健康状况可能左右人们对养老保险投入的态度，家庭收入更是从经济基础上决定一个家庭是否具备按时缴纳保费能力。
+        <br/><br/>从一些变量的回归结果也可以得到一些反映现实的结论。从控制变量上来看，性别、经济状况、健康状况、心理健康与幸福感之间的影响显著。从性别方面，女性幸福感会更高。OR值为1.333，女性满意度至少提升一个等级的可能性是男性的1.333倍。女性压力相对男性较小，幸福感较高。社会对男性可能赋予更高的期望，男性承担着更多赡养老人和子女的责任，承担着更大的社会压力。
+        <br/><br/>从健康方面，健康状况自评越高，心理健康状况越好，幸福感越高。健康状况良好的老人能够自由地进行日常活动，避免病痛的困扰；同时心理健康状态良好的老年人拥有积极乐观心态，能够增强自身的幸福感。另外，收入水平越高，也会显著增加老年人的幸福感。收入越高，老年人能够拥有更高的生活质量，从而有更高的幸福感。而年龄、户口性质和最高教育程度在回归模型中不显著，说明对老年人幸福感没有显著性影响。
+      </p>
+
+        
+
+    </div>
+
+    <footer style="clear: both;">
+      <p style="margin-top: 10%;color: #000000;">© 2023 Ynzhy-squad. All Rights Reserved.</p>
+    </footer>
+
+      <!-- 引入鼠标动画 -->
+    <!--<script src="../static/js/action.js"></script>-->
+
+    <script>
+        new Vue({
+          el: '#URLrecognize',
+          data() {
+            return {
+
+              activeIndex: '1',
+              activeIndex2: '1'
+
+            }
+          },
+          methods: {
+            TO_1(){
+                window.location.href = "login.html"
+            },
+            TO_2(){
+                window.location.href = "history.html"
+            },
+            TO_3(){
+                window.location.href = "hotUrl.html"
+            },
+            TO_4(){
+                window.location.href = "API.html"
+            },
+            TO_5(){
+                window.location.href = "result.html"
+            },
+            handleSelect(key, keyPath) {
+              console.log(key, keyPath);
+            }
+          }
+
+        })
+      </script>
+</body>
+</html>
